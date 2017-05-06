@@ -16,34 +16,34 @@ $(document).ready(function(){
 	$("#lossText").html(losses); // Displays total number of losses.
 
 	$("#redButton").on("click", function(){ //Adds the value of the red Number to the total guesses when red button is clicked.
-		console.log("red number is: " + redNum);
 		guessTotal = guessTotal += redNum;
-		console.log("running total: " + guessTotal);
 		$("#currentGuess").html(guessTotal); // updates total number display
+		console.log("red number is: " + redNum);
+		console.log("running total: " + guessTotal);
 		winCheck(); // Sees if this move ended the game
 	})
 
 	$("#greenButton").on("click", function(){ //Adds the value of the green Number to the total guesses when red button is clicked.
-		console.log("green number is: " + greenNum);
 		guessTotal = guessTotal += greenNum;
-		console.log("running total: " + guessTotal);
 		$("#currentGuess").html(guessTotal); // updates total number display
+		console.log("green number is: " + greenNum);
+		console.log("running total: " + guessTotal);
 		winCheck(); // Sees if this move ended the game
 	})
 
 	$("#blueButton").on("click", function(){ //Adds the value of the blue Number to the total guesses when blue button is clicked.
-		console.log("blue number is: " + blueNum);
 		guessTotal = guessTotal += blueNum;
-		console.log("running total: " + guessTotal);
 		$("#currentGuess").html(guessTotal); // updates total number display
+		console.log("blue number is: " + blueNum);
+		console.log("running total: " + guessTotal);
 		winCheck(); // Sees if this move ended the game
 	})
 
 	$("#yellowButton").on("click", function(){ //Adds the value of the yellow Number to the total guesses when yellow button is clicked.
-		console.log("yellow number is: " + yellowNum);
 		guessTotal = guessTotal += yellowNum;
-		console.log("running total: " + guessTotal);
 		$("#currentGuess").html(guessTotal); // updates total number display
+		console.log("yellow number is: " + yellowNum);
+		console.log("running total: " + guessTotal);
 		winCheck(); // Sees if this move ended the game
 	})
 
@@ -53,14 +53,14 @@ $(document).ready(function(){
 			// $("#winOrLose").html("You win!");
 			$("#winText").html(wins); //Displays total number of wins.
 			alert("you win!");
-			reset();
+			reset(); //runs the reset function so everything goes back to zero.
 		}
 		if (guessTotal > randomNum) { //If your guesses go over the random number you lose.
 			losses++;		
 			// $("#winOrLose").html("you lose!");
 			alert("you lose!");
 			$("#lossText").html(losses); // Displays total number of losses.
-			reset();
+			reset(); //runs the reset function so everything goes back to zero.
 		}
 	}
 

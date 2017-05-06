@@ -1,49 +1,72 @@
+/*Paul Richard*/
+h1,
 h2,
 p {
-	color: red;
 	text-align: center;
 }
 
-#buttons{
-	font-family: helvetica;
-	text-align: center;
-	margin: 10px;
-	width: 80%;
+p {
+	font-size: 1.5em;
 }
 
 #greenButton {
-	width: 100px;
-	height: 75px;
-	background-color: green;
+	width: 120px;
+	height: 120px;
+	background: url(assets/green_crystal.png);
 	color: white;
 	margin: 0 auto;
 	display: inline-block;
 }
 
-/*Paul Richard*/
 #redButton {
-	width: 100px;
-	height: 75px;
-	background-color: red;
+	width: 120px;
+	height: 120px;
+	background: url(assets/red_crystal.png);
 	color: white;
 	margin: 0 auto;
 	display: inline-block;
 }
 
 #blueButton {
-	width: 100px;
-	height: 75px;
-	background-color: blue;
+	width: 120px;
+	height: 120px;
+	background: url(assets/blue_crystal.png);
 	color: white;
 	margin: 0 auto;
 	display: inline-block;
 }
 
 #yellowButton {
-	width: 100px;
-	height: 75px;
-	background-color: yellow;
+	width: 120px;
+	height: 120px;
+	background: url(assets/yellow_crystal.png);
 	/*color: white;*/
 	margin: 0 auto;
 	display: inline-block;
+}
+ /*On-click animation:*/
+
+#yellowButton:active {
+	transform: translateY(10px);
+}
+
+#blueButton:active {
+	transform: translateY(10px);
+}
+
+#redButton:active {
+	transform: translateY(10px);
+}
+
+#greenButton:active {
+	transform: translateY(10px);
+}
+
+body {
+	background: url(assets/backgroundTile.png);
+}
+
+#randomNumber,
+#currentGuess {
+	color: red;
 }

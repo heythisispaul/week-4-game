@@ -6,21 +6,38 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="crystalstyle.css">
 </head>
-	<h1>Crystal Game!</h1>
-	<h2> Magic number: <span id="randomNumber"></span></h2>
-	<h2>Your current number: <span id="currentGuess"></span></h2>
-	<p>Wins: <span id="winText"></span></p>
-	<p>Losses: <span id="lossText"></span></p>
-	<p id="winOrLose"></p>
 <body>
-	<div id="buttons">
-		<div id="redButton">Red Crystal</div>
-		<div id="greenButton">Green Crystal</div>
-		<div id="blueButton">Blue Crystal</div>
-		<div id="yellowButton">Yellow Crystal</div>
+	<div class="container">
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+				<h1>Crystal Game!</h1>
+				</div>
+				<div class="panel-body">
+					<p>In this game each of the four crystals have a number assigned to them. The number is random everytime, and you only know what it is by clicking them. Each click adds that crystal's value to your score. If you get the magic number exactly, you win! If your guess goes over the magic number, you lose! Good luck!</p>
+				</div>
+		</div>
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="col-sm-6">
+						<h2> Magic number: <span id="randomNumber"></span></h2>
+						<h2>Your current number: <span id="currentGuess"></span></h2>
+						<p>Wins: <span id="winText"></span></p>
+						<p>Losses: <span id="lossText"></span></p>
+						<p id="winOrLose"></p>
+					</div>	
+					<div class="col-sm-6">
+						<div id="redButton"></div>
+						<div id="greenButton"></div>
+						<div id="blueButton"></div>
+						<div id="yellowButton"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="crystalgame.js"></script>
 	</div>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="crystalgame.js"></script>
 </body>
 </html>
