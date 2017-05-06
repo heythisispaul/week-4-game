@@ -1,3 +1,4 @@
+// Paul Richard
 $(document).ready(function(){
 	console.log("hello world!"); // checking to make sure it's linked.
 
@@ -12,13 +13,14 @@ $(document).ready(function(){
 
 	$("#randomNumber").html(randomNum); // Displays the randomly generated number.
 	$("#winText").html(wins); //Displays total number of wins.
-	$("#lossText").html(wins); // Displays total number of losses.
+	$("#lossText").html(losses); // Displays total number of losses.
 
 	$("#redButton").on("click", function(){ //Adds the value of the red Number to the total guesses when red button is clicked.
 		console.log("red number is: " + redNum);
 		guessTotal = guessTotal += redNum;
 		console.log("running total: " + guessTotal);
 		$("#currentGuess").html(guessTotal); // updates total number display
+		winCheck(); // Sees if this move ended the game
 	})
 
 	$("#greenButton").on("click", function(){ //Adds the value of the green Number to the total guesses when red button is clicked.
@@ -26,6 +28,7 @@ $(document).ready(function(){
 		guessTotal = guessTotal += greenNum;
 		console.log("running total: " + guessTotal);
 		$("#currentGuess").html(guessTotal); // updates total number display
+		winCheck(); // Sees if this move ended the game
 	})
 
 	$("#blueButton").on("click", function(){ //Adds the value of the blue Number to the total guesses when blue button is clicked.
@@ -33,6 +36,7 @@ $(document).ready(function(){
 		guessTotal = guessTotal += blueNum;
 		console.log("running total: " + guessTotal);
 		$("#currentGuess").html(guessTotal); // updates total number display
+		winCheck(); // Sees if this move ended the game
 	})
 
 	$("#yellowButton").on("click", function(){ //Adds the value of the yellow Number to the total guesses when yellow button is clicked.
@@ -40,27 +44,34 @@ $(document).ready(function(){
 		guessTotal = guessTotal += yellowNum;
 		console.log("running total: " + guessTotal);
 		$("#currentGuess").html(guessTotal); // updates total number display
+		winCheck(); // Sees if this move ended the game
 	})
 
-	if (guessTotal === randomNum) { //If the numbers match you win
-		wins++;
-		$("#winOrLose").html("You win!");
-		reset();
-	}
-
-	if (guessTotal > randomNum) { //If your guesses go over the random number you lose.
-		losses++;		
-		$("#winOrLose").html("you lose!");
-		reset();
+	function winCheck() {
+		if (guessTotal === randomNum) { //If the numbers match you win
+			wins++;
+			// $("#winOrLose").html("You win!");
+			$("#winText").html(wins); //Displays total number of wins.
+			alert("you win!");
+			reset();
+		}
+		if (guessTotal > randomNum) { //If your guesses go over the random number you lose.
+			losses++;		
+			// $("#winOrLose").html("you lose!");
+			alert("you lose!");
+			$("#lossText").html(losses); // Displays total number of losses.
+			reset();
+		}
 	}
 
 	function reset() { //Resets the random values of all the numbers and begins a new round.
-		guesses = [];
 		guessTotal = 0;
-		var randomNum = Math.floor(Math.random() * (120 - 19)) + 19;
+		randomNum = Math.floor(Math.random() * (120 - 19)) + 19;
 		blueNum = Math.floor(Math.random() * (12 - 1)) + 1;
 		redNum = Math.floor(Math.random() * (12 - 1)) + 1;
 		greenNum = Math.floor(Math.random() * (12 - 1)) + 1;
 		yellowNum = Math.floor(Math.random() * (12 - 1)) + 1;
+		$("#randomNumber").html(randomNum); // updates the display of the randomly generated number.
+		$("#currentGuess").html(guessTotal); // updates total number display
 	}
 });

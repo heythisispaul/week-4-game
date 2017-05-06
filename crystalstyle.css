@@ -1,5 +1,7 @@
-h2 {
+h2,
+p {
 	color: red;
+	text-align: center;
 }
 
 #buttons{
@@ -14,15 +16,18 @@ h2 {
 	height: 75px;
 	background-color: green;
 	color: white;
-	margin: 10px;
+	margin: 0 auto;
+	display: inline-block;
 }
 
+/*Paul Richard*/
 #redButton {
 	width: 100px;
 	height: 75px;
 	background-color: red;
 	color: white;
-	margin: 10px;
+	margin: 0 auto;
+	display: inline-block;
 }
 
 #blueButton {
@@ -30,7 +35,8 @@ h2 {
 	height: 75px;
 	background-color: blue;
 	color: white;
-	margin: 10px;
+	margin: 0 auto;
+	display: inline-block;
 }
 
 #yellowButton {
@@ -38,5 +44,6 @@ h2 {
 	height: 75px;
 	background-color: yellow;
 	/*color: white;*/
-	margin: 10px;
+	margin: 0 auto;
+	display: inline-block;
 }
